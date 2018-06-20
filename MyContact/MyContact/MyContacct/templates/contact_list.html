@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+<table>
+
+        {% block content %}
+    <table >
+        <tr>
+            <td><b>First Name</b></td>
+            <td><b>Last Name</b></td>
+            <td><b>Phone</b></td>
+            <td><b>Email</b></td>
+            <td><b>Adress</b></td>
+            <td><b>Functions </b></td>
+        </tr>
+        {% for contact in contacts %}
+        <tr>
+            <td>{{ contact.firstName }}</td>
+            <td>{{ contact.lastName }}</td>
+            <td>{{ contact.mobile }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.contactAdress }}</td>
+            <td> <div class="dropdown">
+  <div class="dropdown-content">
+    |<a href="/modify?id={{ contact.userId }}">Modify</a>|
+    <a href="/delete?id={{ contact.userId }}">Delete</a>|
+  </div></td>
+        </tr>
+        {% endfor %}
+    </table>
+        {% endblock %}
+
+</table>

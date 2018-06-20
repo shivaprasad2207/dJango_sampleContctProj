@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+     {% block content %}
+
+    <form id="name-form" role="form" action="/modify/" method="post">
+        <input type='hidden' name='csrfmiddlewaretoken' value='{{csrfmiddlewaretoken}}' />
+        <input type='hidden' name='id' value='{{userId}}' />
+        <p><label for="id_firstName">Firstname:</label>
+            <input type="text" name="firstName" value="{{firstName}}" />
+        </p>
+
+        <p><label for="id_lastName">Lastname:</label>
+            <input type="text" name="lastName" value="{{lastName}}"/>
+        </p>
+
+        <p><label for="id_mobile">Mobile:</label>
+            <input type="text" name="mobile" value="{{mobile}}" />
+        </p>
+
+        <p><label for="id_email">Email:</label>
+            <input type="email" name="email" value="{{email}}" />
+        </p>
+
+        <p><label for="id_contactAdress">Contactadress:</label>
+            <textarea name="contactAdress" cols="40" rows="10">
+                {{contactAdress}}
+            </textarea>
+        </p>
+        <button type="submit">Submit</button>
+    </form>
+        {% endblock %}
+
